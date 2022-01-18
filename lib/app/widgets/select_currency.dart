@@ -8,7 +8,24 @@ class SelectCurrency extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DropdownButton<Object>(
-      items: [],
+      items: [
+        DropdownMenuItem(
+          value: 'USD',
+          child: Text('USD'),
+        ),
+        DropdownMenuItem(
+          value: 'EUR',
+          child: Text('EUR'),
+        ),
+        DropdownMenuItem(
+          value: 'BTC',
+          child: Text('BTC'),
+        ),
+        DropdownMenuItem(
+          value: 'BRL',
+          child: Text('BRL'),
+        ),
+      ],
       onChanged: (value) {},
     );
   }
