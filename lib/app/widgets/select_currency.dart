@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SelectCurrency extends StatefulWidget {
-  const SelectCurrency({Key? key}) : super(key: key);
+  const SelectCurrency({Key key}) : super(key: key);
 
   @override
   State<SelectCurrency> createState() => _SelectCurrencyState();
@@ -20,9 +20,9 @@ class _SelectCurrencyState extends State<SelectCurrency> {
         height: 2,
         color: Colors.green,
       ),
-      onChanged: (String? newValue) {
+      onChanged: (String newValue) {
         setState(() {
-          dropdownValue = newValue!;
+          dropdownValue = newValue;
         });
       },
       //REMENBER TO STUDIE THIS

@@ -2,14 +2,14 @@ import 'package:currency_converter/app/widgets/select_currency.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  late double currency1;
+  double currency1;
 
   input(double width, String label) {
     return SizedBox(

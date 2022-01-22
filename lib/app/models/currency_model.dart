@@ -1,47 +1,47 @@
 class CurrencyModel {
   final String name;
-  final double real;
-  final double dolar;
-  final double euro;
-  final double bitcoin;
+  final double brl;
+  final double usd;
+  final double eur;
+  final double btc;
 
   CurrencyModel({
-    required this.name,
-    required this.real,
-    required this.dolar,
-    required this.euro,
-    required this.bitcoin,
+    this.name,
+    this.brl,
+    this.usd,
+    this.eur,
+    this.btc,
   });
 
   static List<CurrencyModel> getCurrencies() {
     return <CurrencyModel>[
       CurrencyModel(
-        name: 'Real',
-        real: 1,
-        dolar: 1 / 3.5,
-        euro: 1 / 4.5,
-        bitcoin: 1 / 0.0003,
+        name: 'BRL',
+        brl: 1,
+        usd: 0.18,
+        eur: 0.15,
+        btc: 0.000016,
       ),
       CurrencyModel(
-        name: 'Dolar',
-        real: 3.5,
-        dolar: 1,
-        euro: 1 / 4.5,
-        bitcoin: 1 / 0.0003,
+        name: 'USD',
+        brl: 3.5,
+        usd: 1,
+        eur: 0.85,
+        btc: 0.000088,
       ),
       CurrencyModel(
-        name: 'Euro',
-        real: 4.5,
-        dolar: 1 / 3.5,
-        euro: 1,
-        bitcoin: 1 / 0.0003,
+        name: 'EUR',
+        brl: 4.5,
+        usd: 1.17,
+        eur: 1,
+        btc: 0.00010,
       ),
       CurrencyModel(
-        name: 'Bitcoin',
-        real: 0.0003,
-        dolar: 1 / 3.5,
-        euro: 1 / 4.5,
-        bitcoin: 1,
+        name: 'BTC',
+        brl: 64116.51,
+        usd: 11351.30,
+        eur: 9689.54,
+        btc: 1,
       ),
     ];
   }
