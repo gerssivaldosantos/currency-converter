@@ -16,7 +16,6 @@ class HomeController {
   //constructor
   HomeController({this.toText, this.fromText}) {
     currencies = CurrencyModel.getCurrencies();
-    
   }
 
   void convert() {
@@ -33,6 +32,6 @@ class HomeController {
     } else if (fromCurrency.name == 'btc') {
       returnValue = value * toCurrency.btc;
     }
-    fromText.text = returnValue.toStringAsFixed(2);
+    fromText.text = returnValue.toStringAsFixed(5);
   }
 }
