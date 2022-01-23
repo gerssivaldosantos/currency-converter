@@ -14,4 +14,20 @@ main() {
     homeController.convert();
     expect(fromText.text, '0.36');
   });
+
+  test('Should do convert usd to eur', () {
+    toText.text = '1.0';
+    homeController.toCurrency = homeController.currencies[1];
+    homeController.fromCurrency = homeController.currencies[2];
+    homeController.convert();
+    expect(fromText.text, '0.85');
+  });
+
+  test('Should do convert eur to btc', () {
+    toText.text = '1.0';
+    homeController.toCurrency = homeController.currencies[2];
+    homeController.fromCurrency = homeController.currencies[3];
+    homeController.convert();
+    expect(fromText.text, '0.00010');
+  });
 }
