@@ -1,8 +1,16 @@
+import 'package:currency_converter/app/controllers/home_controller.dart';
 import 'package:currency_converter/app/widgets/select_currency.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
-  const Home({key}) : super(key: key);
+  final TextEditingController toText = TextEditingController();
+  final TextEditingController fromText = TextEditingController();
+
+  HomeController homeController;
+
+  Home() {
+    homeController = HomeController(toText: toText, fromText: fromText);
+  }
 
   @override
   _HomeState createState() => _HomeState();
