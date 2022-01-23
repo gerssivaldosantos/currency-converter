@@ -16,28 +16,28 @@ class CurrencyModel {
   static List<CurrencyModel> getCurrencies() {
     return <CurrencyModel>[
       CurrencyModel(
-        name: 'BRL',
+        name: 'brl',
         brl: 1,
         usd: 0.18,
         eur: 0.15,
         btc: 0.000016,
       ),
       CurrencyModel(
-        name: 'USD',
+        name: 'usd',
         brl: 3.5,
         usd: 1,
         eur: 0.85,
         btc: 0.000088,
       ),
       CurrencyModel(
-        name: 'EUR',
+        name: 'eur',
         brl: 4.5,
         usd: 1.17,
         eur: 1,
         btc: 0.00010,
       ),
       CurrencyModel(
-        name: 'BTC',
+        name: 'btc',
         brl: 64116.51,
         usd: 11351.30,
         eur: 9689.54,
