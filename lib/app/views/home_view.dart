@@ -1,7 +1,17 @@
+import 'package:currency_converter/app/controllers/home_controller.dart';
 import 'package:currency_converter/app/widgets/currency_box.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
+  final TextEditingController toText = TextEditingController();
+  final TextEditingController fromText = TextEditingController();
+
+  HomeController homeController;
+
+  HomeView() {
+    homeController = HomeController(toText: toText, fromText: fromText);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +39,22 @@ class HomeView extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
                 child: Text('Currency Converter'),
               ),
-              CurrencyBox(),
-              CurrencyBox(),
+              CurrencyBox(
+                selectedItem: homeController.toCurrency,
+                items: homeController.currencies,
+                onChanged: (model) {
+                  debugPrint(model.name);
+                },
+                controller: toText,
+              ),
+              CurrencyBox(
+                selectedItem: homeController.fromCurrency,
+                items: homeController.currencies,
+                onChanged: (model) {
+                  debugPrint(model.name);
+                },
+                controller: fromText,
+              ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
                 child: ElevatedButton(
