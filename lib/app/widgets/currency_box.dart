@@ -7,7 +7,8 @@ class CurrencyBox extends StatelessWidget {
   final CurrencyModel selectedItem;
   final TextEditingController controller;
   final Function(CurrencyModel model) onChanged;
-  const CurrencyBox({Key key, this.items, this.controller, this.onChanged, this.selectedItem})
+  const CurrencyBox(
+      {Key key, this.items, this.controller, this.onChanged, this.selectedItem})
       : super(key: key);
 
   @override
@@ -16,6 +17,7 @@ class CurrencyBox extends StatelessWidget {
       padding: const EdgeInsets.all(25.0),
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         DropdownButton(
+          value: selectedItem,
           items: items
               .map(
                 (e) => DropdownMenuItem(

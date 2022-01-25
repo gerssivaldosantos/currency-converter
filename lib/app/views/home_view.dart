@@ -2,13 +2,21 @@ import 'package:currency_converter/app/controllers/home_controller.dart';
 import 'package:currency_converter/app/widgets/currency_box.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
+  @override
+  _HomeViewState createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   final TextEditingController toText = TextEditingController();
+
   final TextEditingController fromText = TextEditingController();
 
   HomeController homeController;
 
-  HomeView() {
+  @override
+  void initState() {
+    super.initState();
     homeController = HomeController(toText: toText, fromText: fromText);
   }
 
@@ -43,7 +51,9 @@ class HomeView extends StatelessWidget {
                 selectedItem: homeController.toCurrency,
                 items: homeController.currencies,
                 onChanged: (model) {
-                  debugPrint(model.name);
+                  setState(() {
+                    homeController.toCurrency = model;
+                  });
                 },
                 controller: toText,
               ),
@@ -51,7 +61,9 @@ class HomeView extends StatelessWidget {
                 selectedItem: homeController.fromCurrency,
                 items: homeController.currencies,
                 onChanged: (model) {
-                  debugPrint(model.name);
+                  setState(() {
+                    homeController.fromCurrency = model;
+                  });
                 },
                 controller: fromText,
               ),
