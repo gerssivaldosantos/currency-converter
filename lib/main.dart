@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       initialRoute: '/',
       routes: {
-        '/': (context) => Home(),
+        '/': (context) => HomeView(),
       },
     );
   }
