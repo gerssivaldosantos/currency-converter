@@ -70,7 +70,9 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    homeController.convert();
+                  },
                   child: Text(
                     'Convert',
                     style: TextStyle(

@@ -32,17 +32,18 @@ class CurrencyBox extends StatelessWidget {
           width: 20,
         ),
         Expanded(
-            child: TextField(
-          controller: controller,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Enter Amount',
+          child: TextField(
+            controller: controller,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Enter Amount',
+            ),
+            keyboardType: TextInputType.number,
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly,
+            ],
           ),
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly,
-          ],
-        )),
+        ),
       ]),
     );
   }
