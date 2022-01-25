@@ -32,6 +32,10 @@ class HomeController {
     } else if (fromCurrency.name == 'btc') {
       returnValue = value * toCurrency.btc;
     }
-    fromText.text = returnValue.toStringAsFixed(5);
+    if (fromCurrency.name == 'btc') {
+      fromText.text = returnValue.toStringAsFixed(5);
+    } else {
+      fromText.text = returnValue.toStringAsFixed(2);
+    }
   }
 }
